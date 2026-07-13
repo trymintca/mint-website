@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFile, readdir } from 'node:fs/promises';
 import { publicFiles } from './public-files.mjs';
+import { generatedAssets } from './favicon-assets.mjs';
 
 const root = new URL('../', import.meta.url);
 const output = new URL('../dist/', import.meta.url);
@@ -62,9 +63,10 @@ const normalizedDeployed = deployed.map((entry) => entry.replaceAll('\\', '/'));
 for (const forbidden of ['.git', 'README.md', 'mint-website-form-ready.zip', 'package.json', 'scripts']) {
   assert(!normalizedDeployed.some((entry) => entry === forbidden || entry.startsWith(`${forbidden}/`)), `Forbidden deployment content found: ${forbidden}`);
 }
-for (const file of publicFiles) {
+const expectedFiles = [...publicFiles, ...Object.keys(generatedAssets)];
+for (const file of expectedFiles) {
   assert(normalizedDeployed.includes(file), `Allowlisted deployment file is missing: ${file}`);
 }
-assert(normalizedDeployed.filter((entry) => entry !== '.well-known').length === publicFiles.length, 'Unexpected file found in deployment output.');
+assert(normalizedDeployed.filter((entry) => entry !== '.well-known').length === expectedFiles.length, 'Unexpected file found in deployment output.');
 
 console.log('Security checks passed.');
