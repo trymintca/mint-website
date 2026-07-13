@@ -1,4 +1,10 @@
 /*
+  Content-Security-Policy: default-src 'none'; base-uri 'none'; connect-src 'self'; form-action https://formsubmit.co; frame-ancestors 'none'; img-src 'self'; script-src 'self' 'sha256-sXfQ4c/NIHB8hpG4MouMAvCJUs87n7u2JpUrsq8jJ5Q='; style-src 'self'; font-src 'self'; manifest-src 'self'; media-src 'self'; object-src 'none'; worker-src 'none'; upgrade-insecure-requests
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
+  X-Permitted-Cross-Domain-Policies: none
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()

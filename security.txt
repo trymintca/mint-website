@@ -1,0 +1,4 @@
+Contact: mailto:hello@trymint.ca
+Expires: 2027-07-12T23:59:59Z
+Canonical: https://trymint.ca/.well-known/security.txt
+Preferred-Languages: en

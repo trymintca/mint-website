@@ -1,0 +1,9 @@
+{
+  "name": "mint-website",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/security-test.mjs",
+    "check": "node scripts/build.mjs && node scripts/security-test.mjs"
+  }
+}

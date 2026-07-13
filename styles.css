@@ -102,6 +102,16 @@ p{margin:0}
 .page-hero p{max-width:45ch;font-size:1.04rem}
 .page-hero img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .page-section{padding:82px 0}
+.page-section--warm{background:var(--warm)}
+.about-callout-title{display:block;color:#111;margin-bottom:8px}
+.service-area-label{color:#111}
+.plans-title{font-size:clamp(2.6rem,4vw,4.2rem);max-width:12ch;margin-top:14px}
+.contact-hero-title{max-width:10ch;margin:14px 0 20px;font-size:clamp(3.4rem,6vw,5.6rem)}
+.contact-hero-copy{max-width:48ch}
+.contact-direct-title{font-size:clamp(2.7rem,4vw,4.3rem);margin-top:14px}
+.contact-direct-copy{margin-top:20px;max-width:35ch}
+.form-card-title{font-size:2.6rem;margin:12px 0 24px}
+.honeypot{display:none}
 .two-col{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
 .two-col h2{font-size:clamp(2.5rem,4vw,4rem)}
 .copy-stack{display:grid;gap:22px}

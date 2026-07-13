@@ -133,7 +133,25 @@ Do not refactor unrelated code without approval.
 
 Production: https://trymint.ca
 
-Ensure builds pass before deployment.
+Cloudflare Pages must use:
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+
+Never deploy the repository root. The allowlisted build prevents `.git`, source
+archives, documentation, and development files from becoming public assets.
+
+Run `npm run check` before deployment. The same build and security checks run in
+GitHub Actions on every pull request and push to `main`.
+
+Cloudflare zone settings must also enforce:
+
+- SSL/TLS mode: Full (strict)
+- Always Use HTTPS: On
+- Minimum TLS version: 1.2
+
+After deployment, verify that HTTP redirects to HTTPS and `/.git/HEAD` returns
+404. Purge the Cloudflare cache after correcting the exposed Git metadata.
 
 ------------------------------------------------------------------------
 
